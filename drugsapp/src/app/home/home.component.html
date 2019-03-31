@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col" id="search">
+    <h1> Drugs </h1>
+    <p> Lorem ipsum </p>
+    
+    <div class="jumbotron jumbotron-fluid" *ngFor="let drug of drug_list">
+      <ol>
+        <li *ngFor="let item of drug; let i=index">
+          <h2> {{drug_label[i]}} </h2>
+          <ul>
+            <li *ngFor="let point of item">
+              <p>{{point}}</p>
+            </li>
+          </ul>
+          <!-- <p> {{item}} </p> -->
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

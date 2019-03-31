@@ -1,0 +1,14 @@
+header{
+    background: #F1F2F3;
+}
+
+#logo{
+    color: #1ad39a;
+    font-weight: 900;
+    padding: 15px 0;
+    display: block;
+}
+
+/* .row{
+    margin: 0 0 0 0!important;
+} */
