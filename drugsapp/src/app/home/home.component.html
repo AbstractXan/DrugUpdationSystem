@@ -1,20 +1,48 @@
-<div class="row">
-  <div class="col" id="search">
-    <h1> Drugs </h1>
-    <p> Lorem ipsum </p>
-    
-    <div class="jumbotron jumbotron-fluid" *ngFor="let drug of drug_list">
-      <ol>
-        <li *ngFor="let item of drug; let i=index">
-          <h2> {{drug_label[i]}} </h2>
-          <ul>
-            <li *ngFor="let point of item">
-              <p>{{point}}</p>
-            </li>
-          </ul>
-          <!-- <p> {{item}} </p> -->
-        </li>
-      </ol>
+<!-- <div style="padding-top: 2rem; padding-bottom: 2rem">
+  <div class="row" style="">
+    <div class="col" id="search">
+      <h1> Recently Updated Drugs </h1>
+      <p> Lorem ipsum </p>
+      
+      <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
+          <div *ngFor="let item of drug; let i=index">
+            <h2> {{drug_label[i]}} </h2>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let point of item">
+                {{point}}
+              </li>
+            </ul>
+          </div>
+      </div>
     </div>
   </div>
+</div> -->
+<div style="padding-top: 2rem; padding-bottom: 2rem">
+    <div class="row">
+
+      <div class="col" id="search">
+        <h1> Recently Updated Drugs </h1>
+        <p> Lorem ipsum </p>
+
+        <!-- Template for each drug in drug_list (array of drugs) -->
+        <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
+        
+          <!-- Get array for of the drug to implement ngFor over it -->
+          <div *ngFor="let property of drug.asArray(); let i=index">
+
+            <!-- Drug_label as heading -->
+            <h2> {{drug_label[i]}} </h2>
+
+            <!-- Bootstrap list-group css -->
+            <ul class="list-group">
+
+              <!-- For every subpoint for drug-prooperty -->
+              <li class="list-group-item" *ngFor="let point of property">
+                {{point}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

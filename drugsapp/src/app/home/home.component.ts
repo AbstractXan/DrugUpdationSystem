@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { titles, Drugs, Drugs_list } from '../mockdata/mockdrugs';
+import { Drugs, titles} from '../mockdata/mockdrugs';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +8,9 @@ import { titles, Drugs, Drugs_list } from '../mockdata/mockdrugs';
 })
 export class HomeComponent implements OnInit {
 
-  drug_list = Drugs_list;
   drug_label = titles;
+  drug_list = Drugs;
+
   constructor() { }
 
   ngOnInit() {
