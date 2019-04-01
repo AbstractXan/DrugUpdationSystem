@@ -18,7 +18,7 @@ export class Drug {
     constructor(
             public article: string,
             public name: string,
-            public scientisficName: string,
+            public scientificName: string,
             public med_class: string,
             public mechanismOfAction: string,
             public adverseEffects: string[],
