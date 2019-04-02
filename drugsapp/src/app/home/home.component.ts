@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Drug, Drugs, titles} from '../mockdata/mockdrugs';
 import { DataService } from '../dataService/data.service';
-import { getBootstrapListener } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +8,7 @@ import { getBootstrapListener } from '@angular/router/src/router_module';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  private loading: boolean = false;
   drug_label = titles;
   drug_list: Drug[];
   constructor(
@@ -17,7 +16,9 @@ export class HomeComponent implements OnInit {
   ) { }
 
   getList(){ //To be made asynchronous for API methods
-    this.drug_list =this.drugsService.getDrugs();
+    // this.drug_list =this.drugsService.getDrugs();
+    this.loading = true;
+    this.drugsService.getDrugs().subscribe(data => {this.drug_list = data; this.loading=false});
   }
 
   ngOnInit() {

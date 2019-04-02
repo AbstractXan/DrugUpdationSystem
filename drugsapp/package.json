@@ -2,6 +2,7 @@
   "name": "drugsapp",
   "version": "0.0.0",
   "scripts": {
+    "json-server": "json-server --watch mockdb.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -22,7 +23,9 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
-    "rxjs": "~6.3.3",
+    "json-server": "^0.14.2",
+    "moment": "^2.24.0",
+    "rxjs": "^6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

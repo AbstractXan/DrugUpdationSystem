@@ -8,24 +8,7 @@
 
         <!-- Template for each drug in drug_list (array of drugs) -->
         <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
-          <!--
-          //Get array for of the drug to implement ngFor over it
-          <div *ngFor="let property of drug.asArray(); let i=index">
-
-            //Drug_label as heading
-            <h2> {{drug_label[i]}} </h2>
-
-            //Bootstrap list-group css
-            <ul class="list-group">
-
-              //For every subpoint for drug-property
-              <li class="list-group-item" *ngFor="let point of property">
-                {{point}}
-              </li>
-            </ul>
-          </div>
-          -->
-          <p>{{drug.lastUpdated.toDateString()}}</p>
+          <p>{{drug.lastUpdated}}</p>
           <h3>{{drug.asArray()[1][0]}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
           <p>{{drug.asArray()[0][0]}}</p>
         </div>
