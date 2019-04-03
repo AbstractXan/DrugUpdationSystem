@@ -34,7 +34,7 @@ export class DataService {
           item.uses,
           item.date
         )
-        if(moment().diff(moment(item.lastUpdated),'month',false) <= 1){
+        if(moment().diff(moment(item.date),'month',false) <= 1){
           drugs.push(tempdrug);
         }
         // console.log(result);
@@ -65,7 +65,7 @@ export class DataService {
           item.adverseEffects,
           item.interactions,
           item.uses,
-          item.lastUpdated
+          item.date
         )
         drugs.push(tempdrug);
         // console.log(result);
@@ -96,7 +96,7 @@ export class DataService {
           item.adverseEffects,
           item.interactions,
           item.uses,
-          item.lastUpdated
+          item.date
         )
         drugs.push(tempdrug);
         if(result["length"]==0){

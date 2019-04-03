@@ -15,8 +15,7 @@
   <div class="card " style="width: max-width; padding:2rem 2rem;" *ngFor="let drug of drug_list"  >
     <h3 *ngIf="loading">Loading...</h3>
     <h3>{{drug.name}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
-    <p>{{drug.article}}</p>
-  </div>
+    
   <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
           <div *ngFor="let property of drug.asArray(); let i=index">
             <h2> {{drug_label[i]}} </h2>            
@@ -26,7 +25,9 @@
               </li>
             </ul>
           </div>
-  <div class="card border border-warning rounded-pill" style="width: max-width; margin: 0 1rem; margin-top: 0;  text-align: center;"  *ngIf="dne">
-    <h4 style="color: orange;"> This is it! </h4>
   </div>
+  </div>
+  <div class="card border border-warning rounded-pill" style="width: max-width; margin: 0 1rem; margin-top: 0;  text-align: center;"  *ngIf="dne">
+      <h4 style="color: orange;"> This is it! </h4>
+    </div>
 </div>
