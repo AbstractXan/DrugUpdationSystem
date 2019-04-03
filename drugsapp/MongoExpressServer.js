@@ -14,16 +14,22 @@ MongoClient.connect(url, function(err, db) {
    dbo = db.db("test");
   });
 
-
-app.get('/', function(req, res)
+app.get('/find', function(req, res)
   {
-    // console.log(req);
-    var query = {};
+
+    var nam = req.query.name;
+    var sciName = req.query.scientificName;
+    var cls = req.query.class;
+    //console.log(nam);
+    var query = {$or : [{name:nam},{scientificName:sciName},{class: cls}]};
+    console.log(query);
     dbo.collection("drugs").find(query).toArray(function(err, result) {
       if (err) throw err;
-      console.log(result);
-      return res.json(result);
+      return res.json(result)
+      //console.log(fin_result);
     })
-  })
+
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
