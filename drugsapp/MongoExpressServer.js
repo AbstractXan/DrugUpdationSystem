@@ -14,7 +14,7 @@ MongoClient.connect(url, function(err, db) {
    dbo = db.db("test");
   });
 
-app.get('/find', function(req, res)
+app.get('/api/find', function(req, res)
   {
 
     var nam = req.query.name;
