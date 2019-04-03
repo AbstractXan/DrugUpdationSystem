@@ -38,6 +38,24 @@ app.get('/api/find', function(req, res)
     })
 
 })
+app.put('/add',function(req,res)
+  {
+    var query = {
+      article: req.query.article,
+      name : req.query.name,
+      scientificName: req.query.scientificName,
+      class: req.query.class,
+      mechanismOfAction: req.query.mechanismOfAction,
+      adverseEffects: req.query.adverseffects,
+      interactions: req.query.interactions,
+      uses: req.query.uses,
+      date: req.query.date
 
+    }
+    dbo.collection("test").insertOne(query,function(err,result){
+      if (err) return res.json({message: "Could Not Add"})
+      return res.json({message:"Added Successfully"})
+    })
+  })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
