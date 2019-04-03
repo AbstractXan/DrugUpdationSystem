@@ -22,22 +22,9 @@ app.get('/api/all',function(req,res)
     })
 
   })
-app.get('/api/find', function(req, res)
-  {
 
-    var nam = req.query.name;
-    var sciName = req.query.scientificName;
-    var cls = req.query.class;
-    //console.log(nam);
-    var query = {$or : [{name:nam},{scientificName:sciName},{class: cls}]};
-    console.log(query);
-    dbo.collection("drugs").find(query).toArray(function(err, result) {
-      if (err) throw err;
-      return res.json(result)
-      //console.log(fin_result);
-    })
 
-})app.put('/api/add',function(req,res)
+app.put('/api/add',function(req,res)
   {
     var mech_d = req.query.mechanismOfAction;
     var eff_d = req.query.adverseEffects;
@@ -66,5 +53,22 @@ app.get('/api/find', function(req, res)
     })
   })
 
+
+app.get('/api/find', function(req, res)
+  {
+
+    var nam = req.query.name;
+    var sciName = req.query.scientificName;
+    var cls = req.query.class;
+    //console.log(nam);
+    var query = {$or : [{name:nam},{scientificName:sciName},{class: cls}]};
+    console.log(query);
+    dbo.collection("drugs").find(query).toArray(function(err, result) {
+      if (err) throw err;
+      return res.json(result)
+      //console.log(fin_result);
+    })
+
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
