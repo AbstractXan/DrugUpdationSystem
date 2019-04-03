@@ -13,7 +13,15 @@ MongoClient.connect(url, function(err, db) {
   if (err) throw err;
    dbo = db.db("test");
   });
+app.get('/api/all',function(req,res)
+        {
+var query  ={};
+  dbo.collection("drugs").find(query).toArray(function(err,result){
+  if (err) throw err;
+    return res.json(result);
+  })
 
+});
 app.get('/api/find', function(req, res)
   {
 
