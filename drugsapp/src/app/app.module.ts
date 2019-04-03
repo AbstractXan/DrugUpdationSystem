@@ -8,11 +8,24 @@ import { HomeComponent } from './home/home.component';
 
 import { DataService } from './dataService/data.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { GetAllComponent } from './admin-dashboard/get-all/get-all.component';
+import { AddOneComponent } from './admin-dashboard/add-one/add-one.component';
+import { FindOneComponent } from './admin-dashboard/find-one/find-one.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
+    AdminDashboardComponent,
+    GetAllComponent,
+    AddOneComponent,
+    FindOneComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

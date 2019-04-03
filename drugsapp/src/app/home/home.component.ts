@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Drug, Drugs, titles} from '../mockdata/mockdrugs';
 import { DataService } from '../dataService/data.service';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,10 +15,13 @@ export class HomeComponent implements OnInit {
       private drugsService: DataService
   ) { }
 
+  DaysPassed(date: string){
+    console.log(date);
+    return moment(date,"YYYYMMD").fromNow();
+  }
   getList(){ //To be made asynchronous for API methods
-    // this.drug_list =this.drugsService.getDrugs();
     this.loading = true;
-    this.drugsService.getDrugs().subscribe(data => {this.drug_list = data; this.loading=false});
+    this.drugsService.getRecentDrugs().subscribe(data => {this.drug_list = data; this.loading=false});
   }
 
   ngOnInit() {

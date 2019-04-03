@@ -1,0 +1,15 @@
+<div style=" padding-bottom: 2rem">
+  <div class="row">
+
+    <div class="col" id="search">
+      <h1> List of all the drugs </h1>
+
+      <!-- Template for each drug in drug_list (array of drugs) -->
+      <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
+        <h3 *ngIf="loading">Loading...</h3>
+        <h3>{{drug.name}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
+        <p>{{drug.article}}</p>
+      </div>
+    </div>
+  </div>
+</div>
