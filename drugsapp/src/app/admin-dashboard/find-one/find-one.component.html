@@ -1,17 +1,32 @@
-<div style="padding-top: 2rem; padding-bottom: 2rem">
+<div style=" padding-bottom: 2rem">
   <div class="row">
-
-    <div class="col" id="search">
-      <h1> Recently Updated Drugs </h1>
-      <p> Lorem ipsum </p>
-
-      <!-- Template for each drug in drug_list (array of drugs) -->
-      <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
-        <h3 *ngIf="loading">Loading...</h3>
-        <p>{{drug.lastUpdated}}</p>
-        <h3>{{drug.name}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
-        <p>{{drug.article}}</p>
+    <div class="col" style="width: max-width; padding:2rem; padding-top: 0;" id="search">
+      <h1> Find Drug </h1>
+      <div class="card " style="width: max-width; padding:2rem 2rem; ">
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Drug Name">
+        <input type="text" [(ngModel)]="scientificName" name="scientificName" class="form-control" placeholder="Scientific Name" >
+        <input type="text" [(ngModel)]="med_class" name="class" class="form-control" placeholder="Class">
+        <button (click)="findList()" type="button" class="btn btn-primary">Find Drug</button>
+        {{error}}
       </div>
     </div>
+  </div>
+
+  <div class="card " style="width: max-width; padding:2rem 2rem;" *ngFor="let drug of drug_list"  >
+    <h3 *ngIf="loading">Loading...</h3>
+    <h3>{{drug.name}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
+    <p>{{drug.article}}</p>
+  </div>
+  <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
+          <div *ngFor="let property of drug.asArray(); let i=index">
+            <h2> {{drug_label[i]}} </h2>            
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let point of property">
+                {{point}}
+              </li>
+            </ul>
+          </div>
+  <div class="card border border-warning rounded-pill" style="width: max-width; margin: 0 1rem; margin-top: 0;  text-align: center;"  *ngIf="dne">
+    <h4 style="color: orange;"> This is it! </h4>
   </div>
 </div>

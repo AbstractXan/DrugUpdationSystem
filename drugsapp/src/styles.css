@@ -4,6 +4,7 @@
 
 body{
     background-color:#3F4648;
+    height: -webkit-max-content;
 }
 
 h1, p, ul, li,a{

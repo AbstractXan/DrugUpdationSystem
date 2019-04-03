@@ -1,5 +1,5 @@
 db.drugs.insertOne({
-article: ' my name is blurry face and I care what people think',
+article: 'Phenytoin prevents repetitive detonation of normal brain cells',
 name :'phenytoin',
 scientificName : 'diphenylhydantion',
 class: 'antiepileptic',

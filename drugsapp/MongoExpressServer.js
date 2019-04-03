@@ -13,6 +13,7 @@ MongoClient.connect(url, function(err, db) {
   if (err) throw err;
    dbo = db.db("test");
   });
+
 app.get('/api/all',function(req,res)
   {
     var query  ={};
@@ -26,6 +27,7 @@ app.get('/api/all',function(req,res)
 
 app.put('/api/add',function(req,res)
   {
+    console.log(req.params);
     var mech_d = req.query.mechanismOfAction;
     var eff_d = req.query.adverseEffects;
     var intrt_d = req.query.interactions;

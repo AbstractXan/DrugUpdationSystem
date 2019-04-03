@@ -1,17 +1,29 @@
-<div style="padding-top: 2rem; padding-bottom: 2rem">
+<div style=" padding-bottom: 2rem">
   <div class="row">
 
-    <div class="col" id="search">
-      <h1> Recently Updated Drugs </h1>
-      <p> Lorem ipsum </p>
-
-      <!-- Template for each drug in drug_list (array of drugs) -->
-      <div class="card " style="width: max-width; padding:2rem 2rem; " *ngFor="let drug of drug_list" >
-        <h3 *ngIf="loading">Loading...</h3>
-        <p>{{drug.lastUpdated}}</p>
-        <h3>{{drug.name}} <span class="badge badge-pill badge-primary">{{drug.med_class}}</span></h3>
-        <p>{{drug.article}}</p>
+    <div class="col" style="width: max-width; padding:2rem; padding-top: 0;" id="search">
+      <h1> Find Drug </h1>
+      <div class="card " style="width: max-width; padding:2rem 2rem; ">
+        <input type="text" [(ngModel)]="article" name="article" class="form-control" placeholder="Article" required >
+        {{article}}
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Drug Name" required >
+        {{name}}
+        <input type="text" [(ngModel)]="scientificName" name="scientificName" class="form-control" placeholder="Scientific Name" required >
+        {{scientificName}}
+        <input type="text" [(ngModel)]="med_class" name="class" class="form-control" placeholder="Class" required >
+        {{med_class}}
+        <input type="text" [(ngModel)]="mechanismOfAction" name="mechanismOfAction" class="form-control" placeholder="Mechanism Of Action" required >
+        {{mechanismOfAction}}
+        <input type="text" [(ngModel)]="adverseEffects" name="adverseEffects" class="form-control" placeholder="Adverse Effects" required >
+        {{adverseEffects}}
+        <input type="text" [(ngModel)]="interactions" name="interactions" class="form-control" placeholder="Interactions" required >
+        {{interactions}}
+        <input type="text" [(ngModel)]="uses" name="uses" class="form-control" placeholder="Uses" required >
+        {{uses}}
+        <button (click)="addDrug()" type="button" class="btn btn-primary">Add Drug</button>
+        {{error}}
       </div>
+      
     </div>
   </div>
 </div>

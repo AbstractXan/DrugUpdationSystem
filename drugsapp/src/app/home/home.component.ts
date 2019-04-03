@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   getList(){ //To be made asynchronous for API methods
     this.loading = true;
     this.drugsService.getRecentDrugs().subscribe(data => {this.drug_list = data; this.loading=false});
+    
   }
 
   ngOnInit() {
