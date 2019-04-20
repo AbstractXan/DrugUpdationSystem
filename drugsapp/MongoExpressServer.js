@@ -72,5 +72,16 @@ app.get('/api/find', function(req, res)
     })
 
 })
+app.post('/api/del',function(req,res){
+  var query = {
+    name : req.query.name
+  }
+  dbo.collection("drugs").deleteOne(query,function(err,result){
+      if (err) return res.json({message: "Unable to Remove"})
+      return res.json({message: "Removed"})
+
+  })
+
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
