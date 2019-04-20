@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/dataService/data.service';
 import { Drug, titles } from 'src/app/mockdata/mockdrugs';
 import * as moment from 'moment';
@@ -19,7 +19,8 @@ export class AddOneComponent implements OnInit {
   interactions: string = '';
   uses: string = '';
 
-  error : String = '';
+  error : string = '';
+  output : string = '';
 
   private uploading: boolean = false;
   drug_label = titles;
@@ -39,7 +40,6 @@ export class AddOneComponent implements OnInit {
     this.adverseEffects==''? {}: checkSum++;
     this.interactions==''? {}: checkSum++;
     this.uses==''? {}: checkSum++;
-    console.log(checkSum);
     if(checkSum==8){
       return true;
     }
@@ -64,7 +64,7 @@ export class AddOneComponent implements OnInit {
         uses: this.uses,
         lastUpdated: moment().format("YYYMMDD")
       }
-      ).subscribe(_ => {this.uploading=false});
+      ).subscribe(_ => {this.uploading=false;});
   }
 
   ngOnInit() {

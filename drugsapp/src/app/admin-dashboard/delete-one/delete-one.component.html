@@ -1,0 +1,25 @@
+<div style=" padding-bottom: 2rem">
+  <div class="row">
+    <div class="col" style="width: max-width; padding:2rem; padding-top: 0;" id="search">
+      <h1> Find & Delete Drug </h1>
+      <div class="card " style="width: max-width; padding:2rem 2rem; ">
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Drug Name">
+        <button (click)="FindDrug()" type="button" class="btn btn-primary">Find Drug</button>
+        {{error}}
+        {{message}}
+      </div>
+    </div>
+  </div>
+
+  <div class="card " style="width: max-width; padding:2rem 2rem; flex: no-wrap" *ngFor="let drug of drug_list"  >
+    <h3 *ngIf="loading">Loading...</h3>
+    <h3>{{drug.name}} <div class="badge badge-pill badge-primary">{{drug.med_class}}</div> 
+      <button (click)="DeleteDrug(drug.name)"type="button" class="btn btn-outline-danger" style="float: right"> Delete </button>
+    </h3>
+
+    
+  </div>
+  <div class="card border border-warning rounded-pill" style="width: max-width; margin: 0 1rem; margin-top: 0;  text-align: center;"  *ngIf="dne">
+      <h4 style="color: orange;"> This is it! </h4>
+    </div>
+</div>

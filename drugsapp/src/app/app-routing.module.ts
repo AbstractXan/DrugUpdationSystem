@@ -7,6 +7,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { GetAllComponent } from './admin-dashboard/get-all/get-all.component';
 import { AddOneComponent } from './admin-dashboard/add-one/add-one.component';
 import { FindOneComponent } from './admin-dashboard/find-one/find-one.component';
+import { DeleteOneComponent } from './admin-dashboard/delete-one/delete-one.component';
 // Declared routes for various pages
 const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
             {path: 'all', component: GetAllComponent},
             {path: 'add', component: AddOneComponent},
             {path: 'find', component: FindOneComponent},
+            {path: 'delete', component: DeleteOneComponent},
             {path: "**", redirectTo: 'all' , pathMatch: 'full'}
           ]
         },

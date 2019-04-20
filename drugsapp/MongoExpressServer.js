@@ -25,9 +25,10 @@ app.get('/api/all',function(req,res)
   })
 
 
-app.put('/api/add',bodyParser.json(),function(req,res)
+  app.get('/api/add',bodyParser.json(),function(req,res)
   {
-    console.log(req.params);
+    console.log(req);
+    console.log(req.query);
     var mech_d = req.query.mechanismOfAction;
     var eff_d = req.query.adverseEffects;
     var intrt_d = req.query.interactions;
@@ -72,14 +73,16 @@ app.get('/api/find', function(req, res)
     })
 
 })
-app.post('/api/del',function(req,res){
+app.get('/api/del',function(req,res){
   var query = {
     name : req.query.name
   }
   dbo.collection("drugs").deleteOne(query,function(err,result){
-      if (err) return res.json({message: "Unable to Remove"})
-      return res.json({message: "Removed"})
-
+      if (err) {return res.json({message: "Unable to Remove"})}
+      else{
+      console.log("Deletion Successful");
+      return res.json({message: "Deletion Successful"})
+      }
   })
 
 })

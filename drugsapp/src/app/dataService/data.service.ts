@@ -129,14 +129,25 @@ export class DataService {
       .set('name', findparams.name)
       .set('class',findparams.class)
       .set('scientificName',findparams.scientificName)
-      .set('mechanismOfACtion',findparams.mechanismOfAction)
+      .set('mechanismOfAction',findparams.mechanismOfAction)
       .set('adverseEffects',findparams.adverseEffects)
       .set('interactions',findparams.interactions)
       .set('uses',findparams.uses)
       .set('date',findparams.lastUpdated)}
 
-    this.http.put('http://localhost:3000/api/add', options).subscribe(result => {console.log(result);output=result});
+    this.http.get('http://localhost:3000/api/add',options).subscribe(result => {console.log(result['message']);output=result['message']},err => console.log(err));
     // console.log(drugs);
     return of(output);
   }
+
+  DeleteDrug(findparams:{name: string}){
+
+  var output;
+  var options = { params: new HttpParams()
+    .set('name', findparams.name)}
+
+  this.http.get('http://localhost:3000/api/del',options).subscribe(result => {console.log(result);output=result},err => console.log(err));
+  // console.log(drugs);
+  return of(output);
+}
 }

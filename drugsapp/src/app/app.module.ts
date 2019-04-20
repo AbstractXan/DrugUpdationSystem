@@ -16,6 +16,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { GetAllComponent } from './admin-dashboard/get-all/get-all.component';
 import { AddOneComponent } from './admin-dashboard/add-one/add-one.component';
 import { FindOneComponent } from './admin-dashboard/find-one/find-one.component';
+import { DeleteOneComponent } from './admin-dashboard/delete-one/delete-one.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { FindOneComponent } from './admin-dashboard/find-one/find-one.component'
     GetAllComponent,
     AddOneComponent,
     FindOneComponent,
+    DeleteOneComponent,
     AdminLoginComponent
   ],
   imports: [
