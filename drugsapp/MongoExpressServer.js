@@ -1,7 +1,7 @@
 const express = require('express')
 var cors = require('cors')
 const app = express()
-
+var bodyParser = require('body-parser')
 app.use(cors())
 
 
@@ -25,7 +25,7 @@ app.get('/api/all',function(req,res)
   })
 
 
-app.put('/api/add',function(req,res)
+app.put('/api/add',bodyParser.json(),function(req,res)
   {
     console.log(req.params);
     var mech_d = req.query.mechanismOfAction;
