@@ -10,4 +10,4 @@ Run `node MongoExpressServer.js` for running backend server.
 ![ScreenShot1](drugsapp/screenshots/screenshot.JPG)
 
 ##Find and Delete - Admin Panel
-![ScreenShot2](drugsapp/screenshots/screenshot1.JPG)
+![ScreenShot2](drugsapp/screenshots/screenshot2.JPG)
