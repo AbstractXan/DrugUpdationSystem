@@ -10,8 +10,8 @@ Navigate to 'http://localhost:4200/admin' for admin login page.
 
 Run `node MongoExpressServer.js` for running backend server.
 
-![ScreenShot1](screenshots/screenshot.jpg)
-![ScreenShot2](screenshots/screenshot2.jpg)
+![ScreenShot1](screenshots/screenshot.JPG)
+![ScreenShot2](screenshots/screenshot2.JPG)
 
 ## Code scaffolding
 
