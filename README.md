@@ -3,7 +3,9 @@ Currently under development. Contributors are welcome!
 
 ## Running
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+
 Navigate to `http://localhost:4200/admin` for admin login page.
+
 Run `node MongoExpressServer.js` for running backend server.
 
 ## ScreenShots
